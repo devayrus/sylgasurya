@@ -4,7 +4,7 @@
 
 #fh5co-header {
 	/* The image used */
-	background-image: url("../img/album1.png");
+	background-image: url("../img/album1.jpg");
 	height: 100vh;
 	/* Center and scale the image nicely */
 	/* background-attachment: fixed; */
@@ -15,7 +15,7 @@
 
 .paralax-acara {
 	/* The image used */
-	background-image: url("../img/album2.png");
+	background-image: url("../img/bg2.jpeg");
 	height: 100vh;
 	/* Center and scale the image nicely */
 	/* background-attachment: fixed; */
