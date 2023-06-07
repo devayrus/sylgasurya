@@ -73,11 +73,11 @@
 			<p>The Wedding Of</p>
 			<h1 style="font-size:80px;color:white;margin-top:-30px;">Sylga &amp; Surya </h1>
 			<p style="margin-top:30px;">Kepada Yth.<br>
-				<p id="kepada"></p>
-				<a href="#" onclick="return OpenInvitation();">
-					<button class="btn-depan btn-4 btn-sep-depan icon-send popup1_open" data-popup-ordinal="0"
-						id="open_92089009">BUKA</button>
-				</a>
+			<p id="kepada"></p>
+			<a href="#" onclick="return OpenInvitation();">
+				<button class="btn-depan btn-4 btn-sep-depan icon-send popup1_open" data-popup-ordinal="0"
+					id="open_92089009">BUKA</button>
+			</a>
 		</div>
 	</div>
 
@@ -303,6 +303,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div id="fh5co-gallery" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
@@ -380,6 +381,46 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="container jadiCenter">
+			<div class="row" style="margin-bottom: 100px;">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box fadeInUp animated-fast">
+					<h1 style="color:#304058;">Love Gift</h1>
+					<p style="color:#304058;">Tanpa mengurangi rasa hormat, bagi anda yang ingin memberikan tanda kasih untuk kami, dapat melalui :</p>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-0 jadiCenter">
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<img src="img/bjb.jpg" alt="img" class="bank-img">
+							</div>
+							<div class="timeline-body">
+								<p>No. Rekening : <strong id="bjb1">0114865036101</strong></p>
+								<p>a.n <strong>Sylga Nur Anissa</strong></p>
+								<div style="margin-top: 20px; margin-bottom: 20px;">
+									<button class="btn btn-info" onclick="copyToClipboard('#bjb1')">Copy No. Rekening</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-0 jadiCenter">
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<img src="img/bjb.jpg" alt="img" class="bank-img">
+							</div>
+							<div class="timeline-body">
+								<p>No. Rekening : <strong id="bjb2">0105147899100</strong></p>
+								<p>a.n <strong>Muhammad Surya Handika</strong></p>
+								<div style="margin-top: 20px; margin-bottom: 20px;">
+									<button class="btn btn-info" onclick="copyToClipboard('#bjb2')">Copy No. Rekening</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div id="fh5co-maps" class="fh5co-bg scrolltomap" style="background-color:#304058;">
 			<div class="overlay"></div>
 			<div class="container">
@@ -551,21 +592,33 @@
 	<!--end script mute-->
 
 	<script>
-		function GetURLParameter(sParam)
+	function GetURLParameter(sParam)
+	{
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) 
 		{
-			var sPageURL = window.location.search.substring(1);
-			var sURLVariables = sPageURL.split('&');
-			for (var i = 0; i < sURLVariables.length; i++) 
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) 
 			{
-				var sParameterName = sURLVariables[i].split('=');
-				if (sParameterName[0] == sParam) 
-				{
-					return sParameterName[1];
-				}
+				return decodeURI(sParameterName[1]);
+			} else {
+				return "";
 			}
 		}
-		var kepada = GetURLParameter('kepada');
-		document.getElementById("kepada").innerHTML = kepada;
+	}
+	var kepada = GetURLParameter('kepada');
+	document.getElementById("kepada").innerHTML = kepada;
+	</script>
+
+	<script>
+		function copyToClipboard(element) {
+		var $temp = $("<input>");
+		$("body").append($temp);
+		$temp.val($(element).text()).select();
+		document.execCommand("copy");
+		$temp.remove();
+		}
 	</script>
 
 

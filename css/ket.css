@@ -8,6 +8,20 @@
 	background-color: #304058;
 }
 
+.bank-img {
+	width: 250px;
+	height: 100%;
+	object-position: center;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	background-color: #304058;
+}
+
+.jadiCenter {
+	display: flex;
+	justify-content: center;
+  }
+
 footer {
 	width: 100%;
 	height: 10vh;
